@@ -38,7 +38,25 @@ AutoClip 分成两层：
 
 `autoclip install` 会准备 `whisper-cli` 和所选模型；当前版本会优先复用系统里的 `FFmpeg`，如果缺失，`doctor` 会明确提示。
 
-### 2. 构建 CLI
+### 2. 用 Homebrew 安装
+
+如果你希望 Agent 或本机环境更容易复用，推荐直接用 Homebrew tap：
+
+```bash
+brew tap shenyangs/autoclip
+brew install shenyangs/autoclip/autoclip
+autoclip models list
+autoclip install --profile fast-high
+autoclip doctor
+```
+
+说明：
+
+- 这个 tap 会安装 `autoclip` CLI，并通过 Homebrew 安装 `ffmpeg` 依赖。
+- 首次使用前仍然需要显式选择并安装本地转写模型。
+- 如果你追求当前最强的本地模型，把 `fast-high` 换成 `best` 即可。
+
+### 3. 构建 CLI
 
 仓库内最简单的方式：
 
@@ -56,7 +74,7 @@ cd ..
 
 下文都假设你从仓库根目录运行 `./cli/autoclip`。
 
-### 3. 选择本地模型档位
+### 4. 选择本地模型档位
 
 先看可选档位：
 
@@ -88,7 +106,7 @@ cd ..
 
 注意：`best` 首次下载约 2.9 GiB，不会静默下载。复杂网络下可以重跑同一条命令，CLI 会续传并自动切换备用镜像，最后以 checksum 校验为准。
 
-### 4. 跑一次最小闭环
+### 5. 跑一次最小闭环
 
 ```bash
 ./cli/autoclip render input.mp4 \
