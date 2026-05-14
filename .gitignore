@@ -1,0 +1,35 @@
+.DS_Store
+cli/autoclip
+cli/autoclip.exe
+*.tmp
+*.download
+
+# Local/private media and generated validation runs
+测试视频/
+test-videos/
+private-fixtures/
+
+# AutoClip generated outputs
+*.autoclip*.mp4
+*.autoclip*.m4a
+*.autoclip*.cuts.json
+*.autoclip*.transcript*.json
+*.autoclip*.transcript*.srt
+*.autoclip*.transcript*.ass
+*.autoclip*.transcript*.review.md
+*.autoclip*.preview.md
+*.autoclip*.preview.html
+*.autoclip*.report.md
+*.autoclip*.manifest.json
+*.autoclip*.audio.wav
+batch.report.md
+
+# Backward-compatible generated patterns
+*.autoclip.mp4
+*.autoclip.m4a
+*.autoclip.cuts.json
+*.autoclip.transcript.json
+*.autoclip.transcript.srt
+*.autoclip.report.md
+*.autoclip.manifest.json
+*.autoclip.audio.wav

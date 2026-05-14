@@ -1,0 +1,22 @@
+name: autoclip
+language: zh
+default_provider: local
+default_preset: balanced
+install_profiles:
+  recommended: fast-high
+  options:
+    lite: 小体积快速下载，适合试用和低配机器。
+    standard: 中等体积，适合日常粗剪。
+    fast-high: 高质量且更快，推荐正式使用。
+    best: 最高质量，体积最大，质量优先。
+download_policy: 安装前必须提示模型体积和耗时；复杂网络下可重跑同一条 install 命令续传，CLI 会尝试官方源和备用镜像并校验 checksum。
+transcript_correction: 需要高质量字幕时先生成 review-pack，Agent 只修正 text，不改 id/start/end，再用 transcript apply 生成 corrected transcript。
+brand_corrections:
+  wps_lingxi: WPS/金山/办公 AI 语境下，灵溪/灵西/零溪/零犀 应优先校为 灵犀 或 WPS 灵犀。
+quality_features:
+  word_timestamps: 用户要求低误剪时加 --timestamps word。
+  preview: 完成后读取 preview.md 或 preview.html，总结已剪、建议人工看、保护词保留。
+  audio: 用户要求声音处理时加 --audio-enhance voice；只标准化可用 --loudnorm。
+  subtitles: 默认输出 SRT/ASS；需要内嵌字幕时加 --burn-subtitles。
+  batch: 批处理默认建议 --cache --resume。
+  variants: 用户想挑版本时用 --variants conservative,balanced,aggressive。
