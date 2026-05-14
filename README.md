@@ -288,3 +288,7 @@ go test ./...
 `全自动、零复核、生产级神剪辑系统`
 
 这个定位更真实，也更利于后续迭代。
+
+## License
+
+MIT. See [LICENSE](LICENSE).
